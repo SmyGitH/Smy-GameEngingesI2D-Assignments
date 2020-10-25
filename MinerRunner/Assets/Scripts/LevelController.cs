@@ -39,7 +39,6 @@ public class LevelController : MonoBehaviour
         float heightA;
         float widthB;
         float heightB;
-        bool isColliding = true;
 
         obstacles[i].transform.position = new Vector3(randX,randY, -8);
 
