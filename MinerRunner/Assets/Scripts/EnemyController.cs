@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public BoxCollider2D batRb;
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,12 @@ public class EnemyController : MonoBehaviour
         int randY = Random.Range(-2,2);
 
         transform.position = new Vector3(randX,randY, -8);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+     {
+        if(other.gameObject.name =="Player"){
+            sound.Play();
+        }
     }
 }

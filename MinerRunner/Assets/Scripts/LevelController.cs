@@ -19,7 +19,7 @@ public class LevelController : MonoBehaviour
     void Update()
     {
         for (int i = 0; i < 6; i++){
-            obstacles[i].transform.Translate(Vector3.left * Time.deltaTime * 2, Camera.main.transform);
+            obstacles[i].transform.Translate(Vector3.left * Time.deltaTime * 2.5f, Camera.main.transform);
 
          if (obstacles[i].transform.position.x < -17.5){
               ResetPosition(i);
@@ -58,7 +58,6 @@ public class LevelController : MonoBehaviour
                     obstacles[i].transform.position.y + heightA > obstacles[j].transform.position.y - heightB &&
                     obstacles[i].transform.position.y - heightA < obstacles[j].transform.position.y + heightB &&
                     obstacles[i].transform.position.x + widthA > obstacles[j].transform.position.x - widthB){
-                    Debug.Log(obstacles[j].name);
                     obstacles[i].transform.position += new Vector3(0, Random.Range(-2,2), 0);
                  }
 

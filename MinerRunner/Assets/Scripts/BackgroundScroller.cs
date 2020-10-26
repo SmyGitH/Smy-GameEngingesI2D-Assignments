@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BackgroundScroller : MonoBehaviour
 {
-    public BoxCollider2D collider;
+    public BoxCollider2D background;
 
     private float width;
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<BoxCollider2D>();
+        background = GetComponent<BoxCollider2D>();
 
-        width = collider.size.x;
-        collider.enabled = false;
+        width = background.size.x;
+        background.enabled = false;
         
     }
 
