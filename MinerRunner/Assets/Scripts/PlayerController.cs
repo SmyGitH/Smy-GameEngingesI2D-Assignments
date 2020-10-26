@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(stun > 0f){
+        if(stun > 0f && !killBoost){
             stunned = true;
             stun -= Time.deltaTime;
             PlayerBlinking();
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.name == "Bat1" || other.gameObject.name == "Bat2" && !killBoost){
+        if (other.gameObject.name == "Bat1" || other.gameObject.name == "Bat2"){
             stun = 3f;
         }
 
